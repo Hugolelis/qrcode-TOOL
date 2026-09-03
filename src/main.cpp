@@ -1,6 +1,8 @@
 #include <iostream>
+#include "matrix.h"
 
 int main() {
-    std::cout << "Gerador de QR Code iniciado!\n";
-    return 0;
+    Matrix matrix(21);
+    matrix.drawFinderPattern(0, 0);
+    matrix.print();
 }

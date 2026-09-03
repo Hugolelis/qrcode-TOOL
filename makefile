@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic -g
+CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic -g -Iincludes
 
 TARGET := build/qrcode
 SOURCE := ${wildcard src/*.cpp}

@@ -16,8 +16,11 @@ class Matrix
         explicit Matrix(int size);
 
         void set(int row, int col, Module value);
+        void drawFinderPattern(int topRow, int topCol);
         Module get(int row, int col) const;
+        
         int size() const;
+        void print() const;
 
     private:
         int size_;
