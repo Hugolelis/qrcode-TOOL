@@ -2,7 +2,7 @@ CXX := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic -g
 
 TARGET := build/qrcode
-SOURCE := src/main.cpp
+SOURCE := ${wildcard src/*.cpp}
 
 .PHONY: all run clean
 
