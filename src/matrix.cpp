@@ -40,3 +40,45 @@ void Matrix::drawFinderPattern(int topRow, int topCol)
         }
     }
 }
+
+void Matrix::drawSeparators() 
+{
+    for (int i = 0; i < 8; ++i) {
+        // around the top-left finder
+        set(7, i, Module::LIGHT);
+        set(i, 7, Module::LIGHT);
+
+        // around the top-right finder
+        set(7, size_ - 1 - i, Module::LIGHT);
+        set(i, size_ - 8, Module::LIGHT);
+
+        // around the bottom-left finder
+        set(size_ - 8, i, Module::LIGHT);
+        set(size_ - 1 - i, 7, Module::LIGHT);
+    }
+}
+
+void Matrix::drawTimingPatterns() 
+{
+    for (int i = 8; i <= size_ - 9; ++i) {
+        Module m = (i % 2 == 0) ? Module::DARK : Module::LIGHT;
+        set(6, i, m);   // horizontal timing pattern (row 6)
+        set(i, 6, m);   // vertical timing pattern (column 6)
+    }
+}
+
+void Matrix::drawDarkModule() 
+{
+    // Formula: (4 * version + 9, 8). Version 1 -> (13, 8)
+    set(13, 8, Module::DARK);
+}
+
+void Matrix::drawFunctionPatterns() 
+{
+    drawFinderPattern(0, 0);
+    drawFinderPattern(0, size_ - 7);
+    drawFinderPattern(size_ - 7, 0);
+    drawSeparators();
+    drawTimingPatterns();
+    drawDarkModule();
+}

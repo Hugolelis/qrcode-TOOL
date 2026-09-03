@@ -15,8 +15,14 @@ class Matrix
     public:
         explicit Matrix(int size);
 
-        void set(int row, int col, Module value);
+        void drawFunctionPatterns();
+        
         void drawFinderPattern(int topRow, int topCol);
+        void drawSeparators();
+        void drawTimingPatterns();
+        void drawDarkModule();
+
+        void set(int row, int col, Module value);
         Module get(int row, int col) const;
         
         int size() const;
