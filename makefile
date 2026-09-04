@@ -2,7 +2,13 @@ CXX := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic -g -Iincludes
 
 TARGET := build/qrcode
-SOURCE := ${wildcard src/*.cpp}
+
+# library sources: the QR logic itself (no main here)
+LIB_SOURCES := $(wildcard src/*.cpp)
+# app sources: just the entry point
+APP_SOURCES := app/main.cpp
+
+SOURCE := $(LIB_SOURCES) $(APP_SOURCES)
 
 .PHONY: all run clean
 
