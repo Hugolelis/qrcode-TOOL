@@ -1,8 +1,8 @@
 #include <iostream>
-#include "matrix.h"
+#include "encoder.h"
 
 int main() {
-    Matrix matrix(21);
-    matrix.drawFunctionPatterns();
-    matrix.print();
+    BitBuffer buffer = encodeByteMode("HELLO");
+    std::cout << "Total bits: " << buffer.size() << "\n";
+    return 0;
 }

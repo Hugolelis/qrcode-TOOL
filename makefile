@@ -6,7 +6,7 @@ TARGET := build/qrcode
 # library sources: the QR logic itself (no main here)
 LIB_SOURCES := $(wildcard src/*.cpp)
 # app sources: just the entry point
-APP_SOURCES := app/main.cpp
+APP_SOURCES := bin/main.cpp
 
 SOURCE := $(LIB_SOURCES) $(APP_SOURCES)
 
